@@ -10,8 +10,8 @@ const UtechMap = () => {
   useEffect(() => {
     const screenHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
-    const relatedHeight = getDirectRuleOfThree();
   }, []);
+
   useEffect(() => {
     const svg = select(svgRef.current);
     svg

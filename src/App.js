@@ -1,7 +1,7 @@
 import React from 'react';
-import UtechMapView from './uTechpia/utechMap.view';
+import UTechRoutes from './uTechRoutes';
 import './App.css';
 
-const App = () => <UtechMapView />;
+const App = () => <UTechRoutes />;
 
 export default App;
