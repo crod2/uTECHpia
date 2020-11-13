@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { select } from 'd3';
 import dataJson from '../../utils/data';
+import { getDirectRuleOfThree } from '../../utils/usefullFunctions';
 
 const UtechMap = () => {
   const svgRef = useRef();
@@ -9,7 +10,7 @@ const UtechMap = () => {
   useEffect(() => {
     const screenHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
-    console.log({ screenHeight, screenWidth });
+    const relatedHeight = getDirectRuleOfThree();
   }, []);
   useEffect(() => {
     const svg = select(svgRef.current);
