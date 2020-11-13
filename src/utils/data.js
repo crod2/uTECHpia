@@ -3,7 +3,7 @@ export default [
     id: 1,
     title: "capitalismo digital",
     radius: 175,
-    related: [5, 6, 7, 8],
+    related: [],
     position: {
       x: 560,
       y: 160,
@@ -13,7 +13,7 @@ export default [
     title: "tecnologías alternativas",
     radius: 120,
     id: 2,
-    related: [3, 4],
+    related: [],
     position: {
       x: 1100,
       y: 290,
@@ -23,7 +23,7 @@ export default [
     title: "apropiación tecnológica",
     radius: 120,
     id: 3,
-    related: [2, 4],
+    related: [],
     position: {
       x: 900,
       y: 550,
@@ -43,7 +43,7 @@ export default [
     title: "precariza",
     radius: 50,
     id: 5,
-    related: [1],
+    related: [],
     position: {
       x: 290,
       y: 120,
@@ -53,7 +53,7 @@ export default [
     title: "alimenta lógicas consumistas",
     radius: 50,
     id: 6,
-    related: [1],
+    related: [],
     position: {
       x: 380,
       y: 280,
@@ -63,7 +63,7 @@ export default [
     title: "destruye la vida",
     radius: 50,
     id: 7,
-    related: [1],
+    related: [],
     position: {
       x: 180,
       y: 360,
@@ -73,7 +73,7 @@ export default [
     title: "destruye el planeta",
     radius: 50,
     id: 8,
-    related: [1],
+    related: [],
     position: {
       x: 340,
       y: 480,
@@ -148,6 +148,26 @@ export default [
     position: {
       x: 1530,
       y: 820,
+    },
+  },
+  {
+    title: "que experimenta",
+    radius: 50,
+    id: 16,
+    related: [],
+    position: {
+      x: 1320,
+      y: 930,
+    },
+  },
+  {
+    title: "sin soluciones únicas",
+    radius: 50,
+    id: 17,
+    related: [],
+    position: {
+      x: 1100,
+      y: 880,
     },
   },
 ];
