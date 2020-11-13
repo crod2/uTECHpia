@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    title: "capitalismo digital",
+    title: 'capitalismo digital',
     radius: 175,
     related: [],
     position: {
@@ -10,7 +10,7 @@ export default [
     },
   },
   {
-    title: "tecnologías alternativas",
+    title: 'tecnologías alternativas',
     radius: 120,
     id: 2,
     related: [],
@@ -20,7 +20,7 @@ export default [
     },
   },
   {
-    title: "apropiación tecnológica",
+    title: 'apropiación tecnológica',
     radius: 120,
     id: 3,
     related: [],
@@ -30,7 +30,7 @@ export default [
     },
   },
   {
-    title: "tecnociencia feminista",
+    title: 'tecnociencia feminista',
     radius: 120,
     id: 4,
     related: [],
@@ -40,7 +40,7 @@ export default [
     },
   },
   {
-    title: "precariza",
+    title: 'precariza',
     radius: 50,
     id: 5,
     related: [],
@@ -50,7 +50,7 @@ export default [
     },
   },
   {
-    title: "alimenta lógicas consumistas",
+    title: 'alimenta lógicas consumistas',
     radius: 50,
     id: 6,
     related: [],
@@ -60,7 +60,7 @@ export default [
     },
   },
   {
-    title: "destruye la vida",
+    title: 'destruye la vida',
     radius: 50,
     id: 7,
     related: [],
@@ -70,7 +70,7 @@ export default [
     },
   },
   {
-    title: "destruye el planeta",
+    title: 'destruye el planeta',
     radius: 50,
     id: 8,
     related: [],
@@ -80,7 +80,7 @@ export default [
     },
   },
   {
-    title: "accesible",
+    title: 'accesible',
     radius: 50,
     id: 9,
     related: [],
@@ -90,7 +90,7 @@ export default [
     },
   },
   {
-    title: "de código abierto",
+    title: 'de código abierto',
     radius: 50,
     id: 10,
     related: [],
@@ -100,7 +100,7 @@ export default [
     },
   },
   {
-    title: "con software libre",
+    title: 'con software libre',
     radius: 50,
     id: 11,
     related: [],
@@ -110,7 +110,7 @@ export default [
     },
   },
   {
-    title: "recupera tecnologías antiguas",
+    title: 'recupera tecnologías antiguas',
     radius: 50,
     id: 12,
     related: [],
@@ -120,7 +120,7 @@ export default [
     },
   },
   {
-    title: "autogestionada",
+    title: 'autogestionada',
     radius: 50,
     id: 13,
     related: [],
@@ -130,8 +130,7 @@ export default [
     },
   },
   {
-    title:
-      "con datos sólo explotables dentro de las comunidados que los generan",
+    title: 'con datos sólo explotables dentro de las comunidados que los generan',
     radius: 50,
     id: 14,
     related: [],
@@ -141,7 +140,7 @@ export default [
     },
   },
   {
-    title: "que cuida las infraestructuras",
+    title: 'que cuida las infraestructuras',
     radius: 50,
     id: 15,
     related: [],
@@ -151,7 +150,7 @@ export default [
     },
   },
   {
-    title: "que experimenta",
+    title: 'que experimenta',
     radius: 50,
     id: 16,
     related: [],
@@ -161,7 +160,7 @@ export default [
     },
   },
   {
-    title: "sin soluciones únicas",
+    title: 'sin soluciones únicas',
     radius: 50,
     id: 17,
     related: [],
