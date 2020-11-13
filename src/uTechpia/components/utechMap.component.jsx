@@ -5,13 +5,19 @@ import dataJson from '../../utils/data';
 const UtechMap = () => {
   const svgRef = useRef();
   const [data, setData] = useState(dataJson);
+
+  useEffect(() => {
+    const screenHeight = window.innerHeight;
+    const screenWidth = window.innerWidth;
+    console.log({ screenHeight, screenWidth });
+  }, []);
   useEffect(() => {
     const svg = select(svgRef.current);
     svg
       .selectAll('circle')
       .data(data)
       .join(
-        enter => enter.append('circle').attr('class', 'circle'),
+        enter => enter.append('circle').attr('class', 'map__circle'),
         update => update.attr('class', 'updated'),
         exit => exit.remove()
       )
