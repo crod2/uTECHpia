@@ -1,0 +1,92 @@
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    jest: true,
+  },
+  extends: ['plugin:react/recommended', 'plugin:prettier/recommended', 'airbnb'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['react', 'flowtype'],
+  rules: {
+    //More rules in: http://eslint.org/docs/rules/
+    'comma-dangle': 2,
+    'jsx-quotes': [2, 'prefer-single'],
+    'no-cond-assign': 2,
+    'no-console': 2,
+    'no-constant-condition': 2,
+    'no-debugger': 2,
+    'no-extra-parens': 2,
+    'no-extra-boolean-cast': 2,
+    'no-extra-semi': 2,
+    'no-fallthrough': 2,
+    'no-func-assign': 2,
+    'no-inner-declarations': 2,
+    'no-undef': 2,
+    'no-unreachable': 2,
+    'no-unused-vars': [
+      2,
+      {
+        args: 'after-used',
+      },
+    ],
+    'no-use-before-define': 1,
+    'react/jsx-closing-bracket-location': 1,
+    'react/jsx-curly-spacing': [2, 'never'],
+    'react/jsx-equals-spacing': [2, 'never'],
+    'react/jsx-handler-names': 0,
+    'react/jsx-indent-props': 1,
+    'react/jsx-indent': [1, 2],
+    'react/jsx-key': 1,
+    'react/jsx-no-bind': [
+      2,
+      {
+        allowArrowFunctions: true,
+        allowBind: false,
+        ignoreRefs: true,
+      },
+    ],
+    'react/jsx-no-duplicate-props': 2,
+    'react/jsx-no-undef': 2,
+    'react/jsx-pascal-case': 1,
+    'react/jsx-uses-react': 2,
+    'react/jsx-uses-vars': 2,
+    'react/jsx-boolean-value': 2,
+
+    //React rules
+    'react/no-danger': 1,
+    'react/no-deprecated': 1,
+    'react/no-did-mount-set-state': 1,
+    'react/no-did-update-set-state': 2,
+    'react/no-direct-mutation-state': 1,
+    'react/no-is-mounted': 1,
+    'react/no-multi-comp': [
+      1,
+      {
+        ignoreStateless: true,
+      },
+    ],
+    'react/no-set-state': 1,
+    'react/display-name': 0,
+    'react/no-string-refs': 1,
+    'react/no-unknown-property': 2,
+    'react/prefer-es6-class': 2,
+    'react/prop-types': 2,
+    'react/react-in-jsx-scope': 2,
+    'react/self-closing-comp': 0,
+    'react/sort-comp': 1,
+    'react/jsx-wrap-multilines': 1,
+    'flowtype/space-after-type-colon': [2, 'always', { allowLineBreak: true }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.js', '.jsx'],
+      },
+    ],
+  },
+};
