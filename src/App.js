@@ -1,18 +1,7 @@
-import logo from './logo.svg';
+import React from 'react';
+import TechMapView from './uTechpia/techMap.view';
 import './App.css';
 
-function App() {
-  const title = "<uTECHpia>"
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-         {title} 
-        </h1>
-      </header>
-    </div>
-  );
-}
+const App = () => <TechMapView />;
 
 export default App;
