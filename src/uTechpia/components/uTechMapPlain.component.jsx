@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import dataJson from '../../utils/data';
-import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
+import { ContextUTech } from '../context/uTechContext';
 import { WrapperStyled, WrapperContainerStyled } from '../../sharedStyles.styled.js';
 import UTechDot from './uTechDot.component';
 
 const UtechMapPlain = () => {
+  const { data } = useContext(ContextUTech);
+
   const MapSvgStyled = styled.svg`
     background-color: black;
     width: 100%;

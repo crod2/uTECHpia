@@ -1,14 +1,21 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
-import { ContextUTech } from '../context/uTechContext';
+import styled from 'styled-components';
 
 const UTechDot = props => {
   const { dotData } = props;
 
-  const { prueba } = useContext(ContextUTech);
+  const [isHovered, setIsHovered] = useState(false);
+
+  //   const CircleStyled = styled.circle`
+  //     border: 24px solid white;
+  //     &:hover {
+  //         stroke-dasharray: 227;
+  //     }
+  //   `;
 
   return (
+    // <CircleStyled
     <circle
       key={dotData.id}
       r={dotData.radius}
@@ -18,7 +25,8 @@ const UTechDot = props => {
       strokeWidth={`24px`}
       className="lalala"
       onClick={() => console.log(dotData)}
-      onMouseEnter={() => console.log(dotData)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     />
   );
 };
