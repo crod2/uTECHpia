@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
+import { ContextUTech } from '../context/uTechContext';
 
 const UTechDot = props => {
   const { dotData } = props;
+
+  const { prueba } = useContext(ContextUTech);
+
   return (
     <circle
       key={dotData.id}
