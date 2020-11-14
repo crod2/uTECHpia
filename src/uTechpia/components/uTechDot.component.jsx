@@ -1,22 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { ContextUTech } from '../context/uTechContext';
+import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
 
 const UTechDot = props => {
   const { dotData } = props;
-
+  const { screenSize } = useContext(ContextUTech);
   const [isHovered, setIsHovered] = useState(false);
+  const biggerRadius = getDirectRuleOfThree(1920, screenSize.width, 175);
 
-  //   const CircleStyled = styled.circle`
-  //     border: 24px solid white;
-  //     &:hover {
-  //         stroke-dasharray: 227;
-  //     }
-  //   `;
+  const dotAnimation = keyframes`
+    0% {
+        r: ${dotData.radius};
+        stroke-width: 24;
+    }
+    95% {
+        r: ${biggerRadius * 2.5 + 5};
+        stroke-width: 30;
+    }
+    100% {
+        r: ${biggerRadius * 2.5};
+        stroke-width: 30;
+    }
+  `;
+
+  const CircleStyled = styled.circle`
+    border: 24px solid white;
+    &:hover {
+      cursor: pointer;
+      stroke-width: 24;
+      animation-iteration-count: 1;
+      animation-name: ${dotAnimation};
+      animation-duration: 0.1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  `;
 
   return (
-    // <CircleStyled
-    <circle
+    <CircleStyled
+      // <circle
       key={dotData.id}
       r={dotData.radius}
       cx={dotData.position.x + dotData.radius}
