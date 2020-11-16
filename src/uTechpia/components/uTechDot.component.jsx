@@ -2,35 +2,59 @@ import React, { useState, useContext } from 'react';
 import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
-import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
+import { getDirectRuleOfThree, getPolylinePoints } from '../../utils/usefulFunctions';
 
 const UTechDot = props => {
   const { dotData } = props;
-  const { data, setData, screenSize } = useContext(ContextUTech);
-  const [isActive, setIsActive] = useState(false);
+  const { data, setData, screenSize, selectedDot, setSelectedDot, setVisibleLines } = useContext(
+    ContextUTech
+  );
+  const [isHovered, setIsHovered] = useState(false);
   const hoverRadius = getDirectRuleOfThree(1920, screenSize.width, 200);
-  console.log(dotData);
-
+  const strokeWidth = 24;
   const dotAnimationHover = keyframes`
     0% {
-        r: ${dotData.radius};
-        stroke-width: 24;
+      transform: scale(1);
     }
     95% {
-        r: ${hoverRadius * 2 + 20};
-        stroke-width: 30;
+      transform: scale(1.4);
     }
     100% {
-        r: ${hoverRadius * 2 + 15};
-        stroke-width: 30;
+      transform: scale(1.2);
+    }
     }
   `;
 
-  const CircleStyled = styled.circle`
-    border: 24px solid white;
+  const dotAnimationInit = keyframes`
+    0% {
+      transform: scale(0);
+    }
+    95% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+    }
+  `;
+
+  const CircleContainerStyled = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: black;
+    border: 20px solid white;
+    border-radius: 50%;
+    top: ${dotData.position.y - strokeWidth}px;
+    left: ${dotData.position.x - strokeWidth}px;
+    width: ${dotData.radius * 2}px;
+    height: ${dotData.radius * 2}px;
+    color: white;
     cursor: pointer;
     &:hover {
-      cursor: pointer;
+      transform-origin: center center;
+      transform: scale(1);
       animation-iteration-count: 1;
       animation-name: ${dotAnimationHover};
       animation-duration: 0.1s;
@@ -39,37 +63,28 @@ const UTechDot = props => {
     }
   `;
 
-  const renderText = () => {
-    if (isActive) {
-      return (
-        <text
-          x={dotData.position.x}
-          y={dotData.position.y}
-          textAnchor="middle"
-          stroke="#51c5cf"
-          strokeWidth="1px"
-        >
-          {dotData.title}
-        </text>
-      );
-    }
-  };
+  const DotTextStyled = styled.h3`
+    background-color: black;
+    width: fit-content;
+  `;
 
   return (
-    <g>
-      <CircleStyled
-        key={dotData.id}
-        r={dotData.radius}
-        cx={dotData.position.x + dotData.radius}
-        cy={dotData.position.y + dotData.radius}
-        stroke="white"
-        strokeWidth={`24px`}
-        className="lalala"
-        onMouseEnter={() => setIsActive(!isActive)}
-        onMouseLeave={() => setIsActive(!isActive)}
-      />
-      {renderText()}
-    </g>
+    <CircleContainerStyled
+      onClick={() => {
+        const polylines = getPolylinePoints([...data], dotData.id);
+        setVisibleLines(polylines);
+      }}
+      onMouseEnter={() => {
+        setIsHovered(!isHovered);
+        setSelectedDot(dotData.id);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(!isHovered);
+        setSelectedDot(dotData.id);
+      }}
+    >
+      <DotTextStyled>{isHovered && dotData.title}</DotTextStyled>
+    </CircleContainerStyled>
   );
 };
 

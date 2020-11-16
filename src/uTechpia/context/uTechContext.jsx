@@ -11,6 +11,9 @@ export const ProviderUTech = props => {
     height: 1080,
   });
 
+  const [selectedDot, setSelectedDot] = useState(0);
+  const [visibleLines, setVisibleLines] = useState([]);
+
   useEffect(() => {
     const screenHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
@@ -34,7 +37,18 @@ export const ProviderUTech = props => {
   }, []);
 
   return (
-    <ContextUTech.Provider value={{ data, setData, screenSize, setScreenSize }}>
+    <ContextUTech.Provider
+      value={{
+        data,
+        setData,
+        screenSize,
+        setScreenSize,
+        selectedDot,
+        setSelectedDot,
+        visibleLines,
+        setVisibleLines,
+      }}
+    >
       {props.children}
     </ContextUTech.Provider>
   );

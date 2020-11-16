@@ -5,20 +5,39 @@ import { WrapperStyled, WrapperContainerStyled } from '../../sharedStyles.styled
 import UTechDot from './uTechDot.component';
 
 const UtechMapPlain = () => {
-  const { data } = useContext(ContextUTech);
+  const { data, visibleLines } = useContext(ContextUTech);
 
-  const MapSvgStyled = styled.svg`
-    background-color: black;
+  const MapDivStyled = styled.div`
+    position: relative;
     width: 100%;
     height: 100%;
+    z-index: 1;
+  `;
+
+  const MapSvgStyled = styled.svg`
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
   `;
 
   return (
     <WrapperStyled>
       <WrapperContainerStyled>
-        <MapSvgStyled>
+        <MapDivStyled>
           {data.map(element => {
             return <UTechDot dotData={element} key={element.id} />;
+          })}
+        </MapDivStyled>
+        <MapSvgStyled>
+          {visibleLines.map((line, index) => {
+            return (
+              <polyline
+                key={index}
+                points={line}
+                style={{ fill: 'none', stroke: 'white', strokeWidth: '20px' }}
+              />
+            );
           })}
         </MapSvgStyled>
       </WrapperContainerStyled>
