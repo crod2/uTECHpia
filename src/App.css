@@ -13,6 +13,7 @@
 }
 
 .lalala:hover {
+  cursor: pointer;
   stroke-width: 24;
   animation-iteration-count: 1;
   animation-name: rotate;
@@ -34,4 +35,8 @@
     r: 80;
     stroke-width: 30;
   }
+}
+
+.lala {
+  color: white;
 }

@@ -6,32 +6,31 @@ import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
 
 const UTechDot = props => {
   const { dotData } = props;
-  const { screenSize } = useContext(ContextUTech);
-  const [isHovered, setIsHovered] = useState(false);
-  const biggerRadius = getDirectRuleOfThree(1920, screenSize.width, 175);
+  const { data, setData } = useContext(ContextUTech);
+  const [isActive, setIsActive] = useState(false);
 
-  const dotAnimation = keyframes`
+  const dotAnimationHover = keyframes`
     0% {
         r: ${dotData.radius};
         stroke-width: 24;
     }
     95% {
-        r: ${biggerRadius * 2.5 + 5};
+        r: ${dotData.radius + 20};
         stroke-width: 30;
     }
     100% {
-        r: ${biggerRadius * 2.5};
+        r: ${dotData.radius + 15};
         stroke-width: 30;
     }
   `;
 
   const CircleStyled = styled.circle`
     border: 24px solid white;
+    cursor: pointer;
     &:hover {
       cursor: pointer;
-      stroke-width: 24;
       animation-iteration-count: 1;
-      animation-name: ${dotAnimation};
+      animation-name: ${dotAnimationHover};
       animation-duration: 0.1s;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
@@ -48,9 +47,7 @@ const UTechDot = props => {
       stroke="white"
       strokeWidth={`24px`}
       className="lalala"
-      onClick={() => console.log(dotData)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsActive(!isActive)}
     />
   );
 };
