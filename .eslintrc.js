@@ -20,5 +20,6 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'react/prop-types': 'off',
   },
 };

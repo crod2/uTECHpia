@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import UTechMapView from './uTechpia/uTechMap.view';
-import UTechMap from './uTechpia/components/uTechMap.component';
+import UTechMap from './uTechpia/components/uTechMapPlain.component';
 import UTechStory from './uTechpia/components/uTechStory.component';
 
 const UTechRoutes = () => {
