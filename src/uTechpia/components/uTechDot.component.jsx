@@ -1,13 +1,15 @@
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
 import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
 
 const UTechDot = props => {
   const { dotData } = props;
-  const { data, setData } = useContext(ContextUTech);
+  const { data, setData, screenSize } = useContext(ContextUTech);
   const [isActive, setIsActive] = useState(false);
+  const hoverRadius = getDirectRuleOfThree(1920, screenSize.width, 200);
+  console.log(dotData);
 
   const dotAnimationHover = keyframes`
     0% {
@@ -15,11 +17,11 @@ const UTechDot = props => {
         stroke-width: 24;
     }
     95% {
-        r: ${dotData.radius + 20};
+        r: ${hoverRadius * 2 + 20};
         stroke-width: 30;
     }
     100% {
-        r: ${dotData.radius + 15};
+        r: ${hoverRadius * 2 + 15};
         stroke-width: 30;
     }
   `;
@@ -38,29 +40,33 @@ const UTechDot = props => {
   `;
 
   return (
-    <CircleStyled
-      // <circle
-      key={dotData.id}
-      r={dotData.radius}
-      cx={dotData.position.x + dotData.radius}
-      cy={dotData.position.y + dotData.radius}
-      stroke="white"
-      strokeWidth={`24px`}
-      className="lalala"
-      onClick={() => setIsActive(!isActive)}
-    />
+    <g>
+      <CircleStyled
+        // <circle
+        key={dotData.id}
+        r={dotData.radius}
+        cx={dotData.position.x + dotData.radius}
+        cy={dotData.position.y + dotData.radius}
+        stroke="white"
+        strokeWidth={`24px`}
+        className="lalala"
+        onMouseEnter={() => setIsActive(true)}
+        onMouseLeave={() => setIsActive(!isActive)}
+      />
+      <text>{dotData.title}</h3>
+    </g>
   );
 };
 
-UTechDot.PropTypes = {
-  dotData: PropTypes.shape({
-    title: PropTypes.string,
-    radius: PropTypes.number,
-    id: PropTypes.number,
-    related: PropTypes.array,
-    position: PropTypes.shape({
-      x: PropTypes.number,
-      y: PropTypes.number,
+UTechDot.propTypes = {
+  dotData: propTypes.shape({
+    title: propTypes.string,
+    radius: propTypes.number,
+    id: propTypes.number,
+    related: propTypes.array,
+    position: propTypes.shape({
+      x: propTypes.number,
+      y: propTypes.number,
     }),
   }),
 };
