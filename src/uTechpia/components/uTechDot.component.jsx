@@ -39,10 +39,25 @@ const UTechDot = props => {
     }
   `;
 
+  const renderText = () => {
+    if (isActive) {
+      return (
+        <text
+          x={dotData.position.x}
+          y={dotData.position.y}
+          textAnchor="middle"
+          stroke="#51c5cf"
+          strokeWidth="1px"
+        >
+          {dotData.title}
+        </text>
+      );
+    }
+  };
+
   return (
     <g>
       <CircleStyled
-        // <circle
         key={dotData.id}
         r={dotData.radius}
         cx={dotData.position.x + dotData.radius}
@@ -50,10 +65,10 @@ const UTechDot = props => {
         stroke="white"
         strokeWidth={`24px`}
         className="lalala"
-        onMouseEnter={() => setIsActive(true)}
+        onMouseEnter={() => setIsActive(!isActive)}
         onMouseLeave={() => setIsActive(!isActive)}
       />
-      <text>{dotData.title}</h3>
+      {renderText()}
     </g>
   );
 };
