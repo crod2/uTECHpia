@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
 import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
-import { loroUtterance } from '../../utils/speechSynthesis';
+import { renderSpeech } from '../../utils/speechSynthesisUtterance';
 
 const UTechDot = props => {
   const { dotData } = props;
@@ -40,19 +40,6 @@ const UTechDot = props => {
     }
   `;
 
-  const renderSpeech = () => {
-    const loro = new SpeechSynthesisUtterance();
-    loro.text = dotData.title;
-    loro.volume = 1;
-    loro.rate = 1;
-    loro.pitch = 1;
-    loro.voice = speechSynthesis.getVoices().find(function (voice) {
-      return voice.name === 'Monica';
-    });
-
-    return speechSynthesis.speak(loro);
-  };
-
   const renderText = () => {
     if (isActive) {
       return (
@@ -81,7 +68,7 @@ const UTechDot = props => {
         className="lalala"
         onMouseEnter={() => setIsActive(!isActive)}
         onMouseLeave={() => setIsActive(!isActive)}
-        onClick={() => renderSpeech()}
+        onClick={() => renderSpeech(dotData.title)}
       />
       {renderText()}
     </g>
