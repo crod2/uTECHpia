@@ -3,7 +3,7 @@ export default [
     id: 1,
     title: 'capitalismo digital',
     radius: 175,
-    related: [],
+    related: [[5], [6, 7, 8, 6]],
     position: {
       x: 560,
       y: 160,
@@ -16,7 +16,7 @@ export default [
     related: [],
     position: {
       x: 1100,
-      y: 290,
+      y: 230,
     },
   },
   {
@@ -36,7 +36,7 @@ export default [
     related: [],
     position: {
       x: 1220,
-      y: 615,
+      y: 580,
     },
   },
   {
@@ -87,16 +87,6 @@ export default [
     position: {
       x: 1560,
       y: 120,
-    },
-  },
-  {
-    title: 'de código abierto',
-    radius: 50,
-    id: 10,
-    related: [],
-    position: {
-      x: 380,
-      y: 280,
     },
   },
   {
