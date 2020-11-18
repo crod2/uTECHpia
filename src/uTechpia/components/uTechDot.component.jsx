@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
 import { getDirectRuleOfThree, getPolylinePoints } from '../../utils/usefulFunctions';
+import SpeechFunction from '../../utils/speechSynthesisUtterance';
 
 const UTechDot = props => {
   const { dotData } = props;
@@ -78,6 +79,10 @@ const UTechDot = props => {
     setVisibleLines([]);
   };
 
+  const renderSpeech = () => {
+    return new SpeechFunction(dotData.title);
+  };
+
   return (
     <CircleContainerStyled
       onMouseEnter={() => {
@@ -86,6 +91,7 @@ const UTechDot = props => {
       onMouseLeave={() => {
         disconnectDots();
       }}
+      onClick={() => renderSpeech()}
     >
       <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
     </CircleContainerStyled>

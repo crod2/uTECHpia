@@ -1,8 +1,10 @@
 TODO 
 
-[ ] Tener identificados, al menos, 4 patrones de diseño (mediator, observer, singleton, etc...)
+TODO 
+
+[ ] Tener identificados, al menos, 4 patrones de diseño
     [x] iterator 
-[ ] Mirar en qué casos meter for...of, que nos permitiría meter iterable
+    [x] singleton
 [ ] Varias llamadas AJAX
 [ ] DOM Dinámico (generando según la el usuario haga cosas)
 [ ] Uso de, al menos, dos APIs de navegador
@@ -12,3 +14,4 @@ Extras
 [ ] Presentation Patterns (MV*)
 [ ] Testing unitario
 [ ] Herramientas de análisis estático (eslint, jsdoc, ...)
+    [ ] crear .editorconfig
