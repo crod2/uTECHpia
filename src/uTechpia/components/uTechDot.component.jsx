@@ -22,7 +22,6 @@ const UTechDot = props => {
     100% {
       transform: scale(1.2);
     }
-    }
   `;
 
   const dotAnimationInit = keyframes`
@@ -34,7 +33,6 @@ const UTechDot = props => {
     }
     100% {
       transform: scale(1);
-    }
     }
   `;
 
@@ -68,22 +66,28 @@ const UTechDot = props => {
     width: fit-content;
   `;
 
+  const connectDots = () => {
+    setSelectedDot(dotData.id);
+
+    const polylines = getPolylinePoints([...data], dotData.id);
+    setVisibleLines(polylines);
+  };
+
+  const disconnectDots = () => {
+    setSelectedDot(0);
+    setVisibleLines([]);
+  };
+
   return (
     <CircleContainerStyled
-      onClick={() => {
-        const polylines = getPolylinePoints([...data], dotData.id);
-        setVisibleLines(polylines);
-      }}
       onMouseEnter={() => {
-        setIsHovered(!isHovered);
-        setSelectedDot(dotData.id);
+        connectDots();
       }}
       onMouseLeave={() => {
-        setIsHovered(!isHovered);
-        setSelectedDot(dotData.id);
+        disconnectDots();
       }}
     >
-      <DotTextStyled>{isHovered && dotData.title}</DotTextStyled>
+      <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
     </CircleContainerStyled>
   );
 };
