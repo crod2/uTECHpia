@@ -9,7 +9,9 @@ export const getDirectRuleOfThree = (hundredBase, hundredReturn, numberToConvert
 export const getPolylinePoints = (data, selectedId) => {
   const selectedObject = data.find(dot => dot.id === selectedId);
   let arrayOfArrays = selectedObject.related;
-  arrayOfArrays = arrayOfArrays.map(array => [selectedId, ...array]);
+  for (let array of arrayOfArrays) {
+    array.unshift(selectedId);
+  }
   const arrayOfStrings = arrayOfArrays.map(item => {
     const string = getStringOfPointFromArray(data, item);
     return string;
