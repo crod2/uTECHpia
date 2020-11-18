@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
 import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
-import { renderSpeech } from '../../utils/speechSynthesisUtterance';
+import SpeechFunction from '../../utils/speechSynthesisUtterance';
 
 const UTechDot = props => {
   const { dotData } = props;
@@ -56,6 +56,10 @@ const UTechDot = props => {
     }
   };
 
+  const renderSpeech = () => {
+    return new SpeechFunction(dotData.title);
+  };
+
   return (
     <g>
       <CircleStyled
@@ -68,7 +72,7 @@ const UTechDot = props => {
         className="lalala"
         onMouseEnter={() => setIsActive(!isActive)}
         onMouseLeave={() => setIsActive(!isActive)}
-        onClick={() => renderSpeech(dotData.title)}
+        onClick={() => renderSpeech()}
       />
       {renderText()}
     </g>
