@@ -72,15 +72,13 @@ const UTechDot = props => {
 
     const polylines = getPolylinePoints([...data], dotData.id);
     setVisibleLines(polylines);
+
+    return new SpeechFunction(dotData.title);
   };
 
   const disconnectDots = () => {
     setSelectedDot(0);
     setVisibleLines([]);
-  };
-
-  const renderSpeech = () => {
-    return new SpeechFunction(dotData.title);
   };
 
   return (
@@ -91,7 +89,6 @@ const UTechDot = props => {
       onMouseLeave={() => {
         disconnectDots();
       }}
-      onClick={() => renderSpeech()}
     >
       <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
     </CircleContainerStyled>
