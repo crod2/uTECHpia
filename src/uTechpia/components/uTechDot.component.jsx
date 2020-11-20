@@ -18,22 +18,10 @@ const UTechDot = props => {
       transform: scale(1);
     }
     95% {
-      transform: scale(1.4);
+      transform: scale(1.3);
     }
     100% {
-      transform: scale(1.2);
-    }
-  `;
-
-  const dotAnimationInit = keyframes`
-    0% {
-      transform: scale(0);
-    }
-    95% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
+      transform: scale(1.1);
     }
   `;
 
@@ -72,6 +60,7 @@ const UTechDot = props => {
 
     const polylines = getPolylinePoints([...data], dotData.id);
     setVisibleLines(polylines);
+    renderSpeech();
   };
 
   const disconnectDots = () => {
@@ -91,9 +80,12 @@ const UTechDot = props => {
       onMouseLeave={() => {
         disconnectDots();
       }}
-      onClick={() => renderSpeech()}
+      onClick={() => {
+        console.log(dotData.id);
+      }}
     >
       <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
+      {/* <DotTextStyled>{dotData.title}</DotTextStyled> */}
     </CircleContainerStyled>
   );
 };

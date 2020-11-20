@@ -34,7 +34,7 @@ export const ProviderUTech = props => {
       };
     });
     setData(responsiveData);
-  }, []);
+  }, [window.innerHeight, window.innerWidth]);
 
   return (
     <ContextUTech.Provider

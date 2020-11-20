@@ -35,7 +35,7 @@ const UtechMapPlain = () => {
               <polyline
                 key={index}
                 points={line}
-                style={{ fill: 'none', stroke: 'white', strokeWidth: '20px' }}
+                style={{ fill: 'none', stroke: 'magenta', strokeWidth: '20px' }}
               />
             );
           })}
