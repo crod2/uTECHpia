@@ -8,6 +8,8 @@ export default [
       x: 560,
       y: 160,
     },
+    description:
+      'El capitalismo digital, a menudo relacionado con el capitalismo de datos o el capitalismo de vigilancia, se entiende como la transformación del modelo capitalista a través de las nuevas tecnologías, así como los procesos que lo conforman.',
   },
   {
     title: 'tecnologías alternativas',
@@ -21,6 +23,8 @@ export default [
       x: 1100,
       y: 230,
     },
+    description:
+      'Las tecnologías alternativas o ecotecnias, son innovaciones  tecnológicas diseñadas para preservar y restablecer el equilibrio entre el medio ambiente y la actividad humana.',
   },
   {
     title: 'tecnociencia feminista',
@@ -35,6 +39,8 @@ export default [
       x: 900,
       y: 550,
     },
+    description:
+      'La tecnociencia feminista es una rama transdisciplinar de los estudios científicos que surgió tras décadas de crítica feminista sobre la forma en que el género y otros marcadores de identidad se entrelazan en los campos combinados de la ciencia y la tecnología.',
   },
   {
     title: 'apropiación tecnológica',
@@ -45,6 +51,8 @@ export default [
       x: 1220,
       y: 580,
     },
+    description:
+      'La apropiación y reutilización de una tecnología de consumo, para un uso distinto al que dicha tecnología ha sido diseñada, se realiza gracias a un proceso que implica el paso por las etapas: adquisición de la tecnología de consumo, una formación y adaptación básica de su uso, y su utilización e integración.',
   },
   {
     title: 'precariza',
@@ -55,6 +63,7 @@ export default [
       x: 290,
       y: 120,
     },
+    description: '',
   },
   {
     title: 'alimenta lógicas consumistas',
@@ -65,6 +74,7 @@ export default [
       x: 380,
       y: 280,
     },
+    description: '',
   },
   {
     title: 'destruye la vida',
@@ -75,6 +85,7 @@ export default [
       x: 180,
       y: 360,
     },
+    description: '',
   },
   {
     title: 'destruye el planeta',
@@ -85,6 +96,7 @@ export default [
       x: 340,
       y: 480,
     },
+    description: '',
   },
   {
     title: 'que experimenta',
@@ -95,6 +107,7 @@ export default [
       x: 1560,
       y: 120,
     },
+    description: '',
   },
   {
     title: 'con software libre',
@@ -105,6 +118,7 @@ export default [
       x: 1420,
       y: 270,
     },
+    description: '',
   },
   {
     title: 'recupera tecnologías antiguas',
@@ -115,6 +129,7 @@ export default [
       x: 1650,
       y: 340,
     },
+    description: '',
   },
   {
     title: 'autogestionada',
@@ -125,6 +140,7 @@ export default [
       x: 1500,
       y: 450,
     },
+    description: '',
   },
   {
     title: 'que cuida las infraestructuras',
@@ -135,6 +151,7 @@ export default [
       x: 1530,
       y: 860,
     },
+    description: '',
   },
   {
     title: 'con datos sólo explotables dentro de las comunidades que los generan',
@@ -148,6 +165,7 @@ export default [
       x: 1620,
       y: 620,
     },
+    description: '',
   },
   {
     title: 'accesible',
@@ -161,6 +179,7 @@ export default [
       x: 1100,
       y: 880,
     },
+    description: '',
   },
   {
     title: 'sin soluciones únicas',
@@ -174,5 +193,6 @@ export default [
       x: 860,
       y: 880,
     },
+    description: '',
   },
 ];

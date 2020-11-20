@@ -7,9 +7,15 @@ import SpeechFunction from '../../utils/speechSynthesisUtterance';
 
 const UTechDot = props => {
   const { dotData } = props;
-  const { data, setData, screenSize, selectedDot, setSelectedDot, setVisibleLines } = useContext(
-    ContextUTech
-  );
+  const {
+    data,
+    setData,
+    screenSize,
+    selectedDot,
+    setSelectedDot,
+    setVisibleLines,
+    setDescription,
+  } = useContext(ContextUTech);
   const [isHovered, setIsHovered] = useState(false);
   const hoverRadius = getDirectRuleOfThree(1920, screenSize.width, 200);
   const strokeWidth = 24;
@@ -79,6 +85,12 @@ const UTechDot = props => {
   const disconnectDots = () => {
     setSelectedDot(0);
     setVisibleLines([]);
+    setDescription('');
+  };
+
+  const handleOnClick = () => {
+    setDescription(dotData.description);
+    return new SpeechFunction(dotData.description);
   };
 
   return (
@@ -89,6 +101,7 @@ const UTechDot = props => {
       onMouseLeave={() => {
         disconnectDots();
       }}
+      onClick={() => handleOnClick()}
     >
       <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
     </CircleContainerStyled>

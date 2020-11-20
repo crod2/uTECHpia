@@ -36,6 +36,8 @@ export const ProviderUTech = props => {
     setData(responsiveData);
   }, []);
 
+  const [description, setDescription] = useState('');
+
   return (
     <ContextUTech.Provider
       value={{
@@ -47,6 +49,8 @@ export const ProviderUTech = props => {
         setSelectedDot,
         visibleLines,
         setVisibleLines,
+        description,
+        setDescription,
       }}
     >
       {props.children}
