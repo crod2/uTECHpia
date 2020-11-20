@@ -6,7 +6,6 @@ export const WrapperStyled = styled.div`
 WrapperStyled.displayName = 'WrapperStyled';
 
 export const WrapperContainerStyled = styled.div`
-  background-color: #282c34;
   height: 100vh;
   display: flex;
   flex-direction: column;
