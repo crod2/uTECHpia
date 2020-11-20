@@ -7,8 +7,8 @@ import { WrapperStyled, WrapperContainerStyled } from '../../sharedStyles.styled
 export const StoryStyled = styled.p`
   text-align: center;
   color: white;
-  font-size: 20px;
-  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
 `;
 WrapperStyled.displayName = 'WrapperStyled';
 
@@ -18,7 +18,7 @@ const UTechStory = () => {
   return (
     <WrapperStyled>
       <WrapperContainerStyled>
-        <NavLink to="/utechmap">
+        <NavLink to="/utechmap" style={{ textDecoration: 'none' }}>
           <StoryStyled>{story}</StoryStyled>
         </NavLink>
       </WrapperContainerStyled>
