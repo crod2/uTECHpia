@@ -29,7 +29,7 @@ export const ProviderUTech = props => {
         radius: getDirectRuleOfThree(1920, screenWidth, dot.radius),
         position: {
           x: getDirectRuleOfThree(1920, screenWidth, dot.position.x),
-          y: getDirectRuleOfThree(1080, screenHeight, dot.position.y),
+          y: getDirectRuleOfThree(1040, screenHeight, dot.position.y),
         },
       };
     });

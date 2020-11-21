@@ -44,15 +44,16 @@ const UTechDot = props => {
   `;
 
   const CircleContainerStyled = styled.div`
+    box-sizing: content-box;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: black;
-    border: 20px solid white;
+    background-color: #120826;
+    border: 5px solid #a3f5cf;
     border-radius: 50%;
-    top: ${dotData.position.y - strokeWidth}px;
-    left: ${dotData.position.x - strokeWidth}px;
+    top: ${dotData.position.y}px;
+    left: ${dotData.position.x}px;
     width: ${dotData.radius * 2}px;
     height: ${dotData.radius * 2}px;
     color: white;
@@ -68,15 +69,25 @@ const UTechDot = props => {
     }
   `;
 
-  const DotTextStyled = styled.h3`
-    background-color: black;
-    width: fit-content;
+  const DotTextStyled = styled.p`
+    font-family: 'Roboto Mono', monospace;
+    font-size: 35px;
+    display: inline;
+    background-color: #120826;
+    white-space: pre-wrap;
+    color: white;
+  `;
+
+  const DotTextWrapperStyled = styled.div`
+    text-align: center;
   `;
 
   const connectDots = () => {
     setSelectedDot(dotData.id);
 
     const polylines = getPolylinePoints([...data], dotData.id);
+    console.log(dotData.position);
+    console.log(polylines);
     setVisibleLines(polylines);
 
     return new SpeechFunction(dotData.title);
@@ -85,7 +96,7 @@ const UTechDot = props => {
   const disconnectDots = () => {
     setSelectedDot(0);
     setVisibleLines([]);
-    setDescription('');
+    // setDescription('');
   };
 
   const handleOnClick = () => {
@@ -95,6 +106,7 @@ const UTechDot = props => {
 
   return (
     <CircleContainerStyled
+      role="button"
       onMouseEnter={() => {
         connectDots();
       }}
@@ -103,7 +115,9 @@ const UTechDot = props => {
       }}
       onClick={() => handleOnClick()}
     >
-      <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
+      <DotTextWrapperStyled>
+        <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
+      </DotTextWrapperStyled>
     </CircleContainerStyled>
   );
 };

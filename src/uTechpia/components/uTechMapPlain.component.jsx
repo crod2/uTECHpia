@@ -19,38 +19,45 @@ const UtechMapPlain = () => {
     height: 100%;
     z-index: 0;
     position: absolute;
+    top: 0;
   `;
 
   const TextDescriptions = styled.p`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     bottom: 10px;
     left: 10px;
     position: absolute;
     max-width: 40%;
     text-align: left;
+    font-size: 20px;
   `;
 
   return (
-    <WrapperStyled>
-      <WrapperContainerStyled>
-        <TextDescriptions>{description}</TextDescriptions>
-        <MapDivStyled>
-          {data.map(element => {
-            return <UTechDot dotData={element} key={element.id} />;
-          })}
-        </MapDivStyled>
-        <MapSvgStyled>
-          {visibleLines.map((line, index) => {
-            return (
-              <polyline
-                key={index}
-                points={line}
-                style={{ fill: 'none', stroke: 'magenta', strokeWidth: '20px' }}
-              />
-            );
-          })}
-        </MapSvgStyled>
-      </WrapperContainerStyled>
-    </WrapperStyled>
+    <WrapperContainerStyled>
+      <TextDescriptions>{description}</TextDescriptions>
+      <MapDivStyled>
+        {data.map(element => {
+          return <UTechDot dotData={element} key={element.id} />;
+        })}
+      </MapDivStyled>
+      <MapSvgStyled>
+        {visibleLines.map((line, index) => {
+          return (
+            <polyline
+              key={index}
+              points={line}
+              style={{
+                fill: 'none',
+                stroke: '#51b7c4',
+                strokeWidth: '5px',
+                strokeDasharray: '5,5',
+              }}
+            />
+          );
+        })}
+      </MapSvgStyled>
+    </WrapperContainerStyled>
   );
 };
 

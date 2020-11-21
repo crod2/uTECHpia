@@ -3,7 +3,7 @@ export const getDirectRuleOfThree = (hundredBase, hundredReturn, numberToConvert
   //125 => x
   //hundredBase => hundredReturn
   //numberToConvert => x
-  return (numberToConvert * hundredReturn) / hundredBase;
+  return Math.floor((numberToConvert * hundredReturn) / hundredBase);
 };
 
 export const getPolylinePoints = (data, selectedId) => {
