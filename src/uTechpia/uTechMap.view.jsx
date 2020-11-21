@@ -1,18 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import { WrapperStyled, WrapperContainerStyled } from '../sharedStyles.styled.js';
+import { WrapperContainerStyled, TitleStyled } from './uTechMap.view.styled';
 
 const UTechMapView = () => {
-  const title = '<uTECHpia>';
+  const mapTitle = '<uTECHpia>';
   return (
-    <WrapperStyled>
-      <WrapperContainerStyled>
-        <h1>
-          <NavLink to="/utechstory">{title}</NavLink>
-        </h1>
-      </WrapperContainerStyled>
-    </WrapperStyled>
+    <WrapperContainerStyled>
+      <TitleStyled>
+        <NavLink to="/utechstory" style={{ textDecoration: 'none', color: '#FFFFFF' }}>
+          {mapTitle}
+        </NavLink>
+      </TitleStyled>
+    </WrapperContainerStyled>
   );
 };
 
