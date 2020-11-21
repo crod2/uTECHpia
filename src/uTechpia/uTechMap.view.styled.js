@@ -36,13 +36,13 @@ const blinkCursorEffect = keyframes`
 
 export const TitleStyled = styled.h1`
   font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
   overflow: hidden;
   position: absolute;
   bottom: 10px;
   left: 10px;
   text-align: left;
   width: 6em;
-  text-shadow: 2px 2px;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   font-size: 100px;
   white-space: nowrap;
