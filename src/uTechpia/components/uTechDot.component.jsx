@@ -69,9 +69,10 @@ const UTechDot = props => {
     }
   `;
 
+  //
   const DotTextStyled = styled.p`
     font-family: 'Roboto Mono', monospace;
-    font-size: 35px;
+    font-size: ${dotData.titleSize}px;
     display: inline;
     background-color: #120826;
     white-space: pre-wrap;
@@ -80,6 +81,7 @@ const UTechDot = props => {
 
   const DotTextWrapperStyled = styled.div`
     text-align: center;
+    line-height: ${dotData.titleSize}px;
   `;
 
   const connectDots = () => {
@@ -117,6 +119,7 @@ const UTechDot = props => {
     >
       <DotTextWrapperStyled>
         <DotTextStyled>{selectedDot === dotData.id && dotData.title}</DotTextStyled>
+        {/* <DotTextStyled>{dotData.title}</DotTextStyled> */}
       </DotTextWrapperStyled>
     </CircleContainerStyled>
   );

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useLayoutEffect } from 'react';
 import dataJson from '../../utils/data';
 import { getDirectRuleOfThree } from '../../utils/usefulFunctions';
 
@@ -14,7 +14,7 @@ export const ProviderUTech = props => {
   const [selectedDot, setSelectedDot] = useState(0);
   const [visibleLines, setVisibleLines] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const screenHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
     console.log({ screenHeight, screenWidth });
