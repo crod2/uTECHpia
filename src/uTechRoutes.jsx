@@ -1,16 +1,14 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
-import UTechMapView from './uTechpia/uTechMap.view';
-import UTechMap from './uTechpia/components/uTechMapPlain.component';
-import UTechStory from './uTechpia/components/uTechStory.component';
+import UTechTitle from './uTechpia/components/titlePage/uTechTitle.component';
+import UtechMapPlain from './uTechpia/components/uTechMapPlain.component';
 
 const UTechRoutes = () => {
   return (
     <Switch>
-      <Route exact path={'/'} component={UTechMapView} />
-      <Route path={'/utechmap'} component={UTechMap} />
-      <Route path={'/utechstory'} component={UTechStory} />
+      <Route exact path={'/'} component={UTechTitle} />
+      <Route path={'/utechmap'} component={UtechMapPlain} />
     </Switch>
   );
 };

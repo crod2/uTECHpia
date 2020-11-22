@@ -86,8 +86,6 @@ const UTechDot = props => {
     setSelectedDot(dotData.id);
 
     const polylines = getPolylinePoints([...data], dotData.id);
-    console.log(dotData.position);
-    console.log(polylines);
     setVisibleLines(polylines);
 
     return new SpeechFunction(dotData.title);

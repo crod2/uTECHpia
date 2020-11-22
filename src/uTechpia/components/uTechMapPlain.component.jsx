@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ContextUTech } from '../context/uTechContext';
-import { WrapperStyled, WrapperContainerStyled } from '../../sharedStyles.styled.js';
 import UTechDot from './uTechDot.component';
 
 const UtechMapPlain = () => {
@@ -21,6 +20,17 @@ const UtechMapPlain = () => {
     position: absolute;
     top: 0;
   `;
+
+  const WrapperContainerStyled = styled.div`
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  `;
+  WrapperContainerStyled.displayName = 'WrapperContainerStyled';
 
   const TextDescriptions = styled.p`
     font-family: 'Roboto', sans-serif;

@@ -14,7 +14,6 @@ const UtechMap = () => {
   useEffect(() => {
     const screenHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
-    console.log({ screenHeight, screenWidth });
     setScreenSize({
       width: screenHeight,
       height: screenWidth,
